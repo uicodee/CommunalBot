@@ -48,7 +48,6 @@ async def get_info(city_code: int, account_id: str) -> list:
                 if index != 6:
                     user.append({name.text: tag.text})
                 else:
-                    split_text: list = [user.append({j[0]: j[1]}) for j in [i for i in [s.split(":") for s in tag.text.split("\n")]][:-2]]
-    print(user)
+                    [user.append({j[0]: j[1]}) for j in [i for i in [s.split(":") for s in tag.text.split("\n")]][:-2]]
     return user
 
