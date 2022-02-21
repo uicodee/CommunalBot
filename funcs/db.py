@@ -20,7 +20,7 @@ async def user(user_id: int) -> bool:
         return True
 
 
-async def get_language(user_id: int) -> str:
+async def get_language(user_id: int) -> dict:
     language = await users.find_one({"user_id": user_id})
-    return language["language"]
+    return language
 

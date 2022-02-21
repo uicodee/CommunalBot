@@ -10,3 +10,11 @@ class is_verified(BoundFilter):
             return True
         else:
             return False
+
+
+class not_verified(BoundFilter):
+    async def check(self, message: types.Message) -> bool:
+        if await db.user(user_id=message.from_user.id) is False:
+            return True
+        else:
+            return False

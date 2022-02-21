@@ -2,25 +2,10 @@ import aiohttp
 from aiohttp import ClientSession
 from bs4 import BeautifulSoup
 import lxml
+from data.data import areas
 
 AREAS_URL = "https://uzoplata.com/?uo-ajax=inferior_field&serviceid=131&field=paysystemid&value={area_id}"
 INFO_URL = "https://uzoplata.com/?uo-ajax=check_perform_payment"
-
-
-async def get_cities(area_id: int) -> list:
-    data = []
-    async with ClientSession() as session:
-        async with session.get(url=AREAS_URL.format(area_id=area_id)) as response:
-            r: dict = await response.json(encoding='utf-8')
-            soup = BeautifulSoup(r.get('data').get('html'), "lxml")
-            cities = soup.find_all(name="option")
-
-            for i in range(1, len(cities)):
-                s = cities[i].text.split('-')
-                data.append({
-                    s[1].strip(): s[0].strip()
-                })
-    return data
 
 
 async def get_info(city_code: int, account_id: str) -> list:
