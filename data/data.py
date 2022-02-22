@@ -1,17 +1,21 @@
 services = {
     'RU': {
         '⚡️ Электроэнергия': 131,
-        '⛽️ Природный газ': 134
+        '⛽️ Природный газ': 134,
+        '⚙️Настройки': 1
     },
     'UZ': {
         '⚡️ Elektr energiyasi': 131,
-        '⛽️ Tabiiy gaz': 134
+        '⛽️ Tabiiy gaz': 134,
+        '⚙️Sozlamalar': 1,
     },
     'EN': {
         '⚡️ Electricity': 131,
-        '⛽️ Natural gas': 134
+        '⛽️ Natural gas': 134,
+        '⚙️Settings': 1
     }
 }
+
 
 areas = {
     'RU': {
@@ -342,19 +346,6 @@ languages = {
     'English': 'EN'
 }
 
-buttons = {
-    'RU': {
-        'main_menu': ['⚡️ Электроэнергия']
-    },
-    'UZ': {
-        'main_menu': ['⚡️ Elektr energiyasi']
-    },
-    'EN': {
-        'main_menu': ['⚡️ Electricity']
-    }
-
-}
-
 welcome = "Здравствуйте, выберите язык\n" \
           "Assalomu Alaykum, tilni tanlang\n" \
           "Hello, choose a language\n"
@@ -365,51 +356,90 @@ messages = {
         'area_request': 'Выберите необходимую область',
         'city_request': 'Выберите необходимый город',
         'account_id': 'Введите 7 значный номер счета, например: <em>0077777</em>',
-        'info': '📜 Услуга: {service}\n'
-                '👤 Ф.И.О: {name}\n'
-                '📍 Регион: {region}\n'
-                '📔 Код района: {code}\n'
-                '📄 Лицевой счет: {account_id}\n'
-                '📞 Оператор: {operator}\n'
-                '⏱ Время: {time}\n'
-                '💰 Баланс: {balance}\n'
-                '📆 Дата последнего платежа: {last_pay}\n'
-                '💸 Сумма последнего платежа: {last_pay_count}\n'
+        'electricity': '📜 Услуга: {service}\n'
+                       '👤 Ф.И.О: {name}\n'
+                       '📍 Регион: {region}\n'
+                       '📔 Код района: {code}\n'
+                       '📄 Лицевой счет: {account_id}\n'
+                       '📞 Оператор: {operator}\n'
+                       '⏱ Время: {time}\n'
+                       '💰 Баланс: {balance}\n'
+                       '📆 Дата последнего платежа: {last_pay}\n'
+                       '💸 Сумма последнего платежа: {last_pay_count}\n',
+        'gas': '📜 Услуга: {service}\n'
+               '👤 Ф.И.О: {name}\n'
+               '📍 Регион: {region}\n'
+               '📔 Код района: {code}\n'
+               '📄 Лицевой счет: {account_id}\n'
+               '🗺 Адрес: {address}\n'
+               '📞 Оператор: {operator}\n'
+               '📆 Период: {period}\n'
+               '⏱ Время: {time}\n'
+               '🧭 Показание счетчика: {count_now}\n'
+               '🧭 Расчетный показатель счетчика: {count_until}\n'
+               '💰 Остаток на начало месяца: {start_balance}\n'
+               '💰 Остаток на конец месяца: {end_balance}\n'
     },
     'UZ': {
         'choose_request': 'Kerakli xizmatni tanlang',
         'area_request': 'Kerakli viloyatni tanlang',
         'city_request': 'Kerakli shaharni tanlang',
         'account_id': '7 xonali xisob raqamini kiriting, masalan: <em>0077777</em>',
-        'info': '📜 Xizmat: {service}\n'
-                '👤 F.I.SH: {name}\n'
-                '📍 Viloyat: {region}\n'
-                '📔 Shahar kodi: {code}\n'
-                '📄 Xisob raqami: {account_id}\n'
-                '📞 Operator: {operator}\n'
-                '⏱ Vaqt: {time}\n'
-                '💰 Balans: {balance}\n'
-                '📆 Oxirgi to\'lov sanasi: {last_pay}\n'
-                '💸 Oxirgi to\'lov summasi: {last_pay_count}\n'
+        'electricity': '📜 Xizmat: {service}\n'
+                       '👤 F.I.SH: {name}\n'
+                       '📍 Viloyat: {region}\n'
+                       '📔 Shahar kodi: {code}\n'
+                       '📄 Xisob raqami: {account_id}\n'
+                       '📞 Operator: {operator}\n'
+                       '⏱ Vaqt: {time}\n'
+                       '💰 Balans: {balance}\n'
+                       '📆 Oxirgi to\'lov sanasi: {last_pay}\n'
+                       '💸 Oxirgi to\'lov summasi: {last_pay_count}\n',
+        'gas': '📜 Xizmat: {service}\n'
+               '👤 F.I.SH: {name}\n'
+               '📍 Viloyat: {region}\n'
+               '📔 Shahar kodi: {code}\n'
+               '📄 Xisob raqami: {account_id}\n'
+               '🗺 Manzil: {address}\n'
+               '📞 Operator: {operator}\n'
+               '📆 Davr: {period}\n'
+               '⏱ Vaqt: {time}\n'
+               '🧭 Xisoblagich ko\'rsatkichi: {count_now}\n'
+               '🧭 To\'langan xisoblagich ko\'rsatkichi: {count_until}\n'
+               '💰 Oy boshiga qoldiq: {start_balance}\n'
+               '💰 Oy oxiriga qoldiq: {end_balance}\n'
+               '📆 Oxirgi to\'lov sanasi: {last_pay}\n',
     },
     'EN': {
         'choose_request': 'Select the required service',
         'area_request': 'Select the desired area',
         'city_request': 'Select the desired city',
         'account_id': 'Enter a 7 digit account number, for example: <em>0077777</em>',
-        'info': '📜 Service: {service}\n'
-                '👤 L.F.P: {name}\n'
-                '📍 Region: {region}\n'
-                '📔 Region code: {code}\n'
-                '📄 Personal account: {account_id}\n'
-                '📞 Operator: {operator}\n'
-                '⏱ Date: {time}\n'
-                '💰 Balance: {balance}\n'
-                '📆 Date of last payment: {last_pay}\n'
-                '💸 The amount of the last payment: {last_pay_count}\n'
+        'electricity': '📜 Service: {service}\n'
+                       '👤 L.F.P: {name}\n'
+                       '📍 Region: {region}\n'
+                       '📔 Region code: {code}\n'
+                       '📄 Personal account: {account_id}\n'
+                       '📞 Operator: {operator}\n'
+                       '⏱ Date: {time}\n'
+                       '💰 Balance: {balance}\n'
+                       '📆 Date of last payment: {last_pay}\n'
+                       '💸 The amount of the last payment: {last_pay_count}\n',
+        'gas': '📜 Service: {service}\n'
+               '👤 L.F.P: {name}\n'
+               '📍 Region: {region}\n'
+               '📔 Region code: {code}\n'
+               '📄 Personal account: {account_id}\n'
+               '🗺 Address: {address}\n'
+               '📞 Operator: {operator}\n'
+               '📆 Period: {period}\n'
+               '⏱ Date: {time}\n'
+               '🧭 Counter indicator: {count_now}\n'
+               '🧭 Calculated meter indicator: {count_until}\n'
+               '💰 Balance at the beginning of the month: {start_balance}\n'
+               '💰 Balance at the end of the month: {end_balance}\n',
     }
 }
-
 
 errors = {
     'RU': {

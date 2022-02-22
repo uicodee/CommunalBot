@@ -15,7 +15,7 @@ async def language_handler(query: types.CallbackQuery, callback_data: dict):
         firstname=query.from_user.full_name,
         language=callback_data.get("language")
     )
-    keyboard = keyboard_generator(row_width=3, data=services[language].keys(), resize_keyboard=True)
+    keyboard = keyboard_generator(row_width=2, data=services[language].keys(), resize_keyboard=True)
     await query.message.answer(
         text=messages[language]['choose_request'],
         reply_markup=keyboard
