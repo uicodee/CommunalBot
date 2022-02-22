@@ -13,6 +13,13 @@ async def new(user_id: int, firstname: str, language: str) -> typing.Any:
     })
 
 
+async def update_language(user_id: int, language: str):
+    await users.update_one(
+        {"user_id": user_id},
+        {"$set": {"language": language}}
+    )
+
+
 async def user(user_id: int) -> bool:
     if await users.count_documents({"user_id": user_id}) == 0:
         return False

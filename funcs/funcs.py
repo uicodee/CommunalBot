@@ -5,18 +5,20 @@ AREAS_URL = "https://uzoplata.com/?uo-ajax=inferior_field&serviceid=131&field=pa
 INFO_URL = "https://uzoplata.com/?uo-ajax=check_perform_payment"
 
 
-async def electricity_info(city_code: int, account_id: str) -> list:
+async def electricity_info(city_code: int, account_id: str):
     user = []
     data = {
-        "paysystemid": 11,
-        "soato": city_code,
-        "quantity": 5000,
-        "account_id": account_id,
-        "proceed-to-checkout": 131
+        "paysystemid": "11",
+        "soato": str(city_code),
+        "quantity": "5000",
+        "account_id": str(account_id),
+        "proceed-to-checkout": "131"
     }
     async with aiohttp.ClientSession(headers={"Content-Types": "form-data"}) as session:
         async with session.post(url=INFO_URL, data=data) as response:
             info = (await response.json(encoding="utf-8")).get('data').get('url')
+            if info is None:
+                return False
 
     async with aiohttp.ClientSession() as session:
         async with session.post(url=info) as response:
@@ -53,15 +55,17 @@ async def get_gas_areas(area_id: int):
 async def gas_info(city_code: int, account_id: int):
     user = []
     data = {
-        "paysystemid": 11,
-        "code": city_code,
-        "quantity": 5000,
-        "account_id": account_id,
-        "proceed-to-checkout": 134
+        "paysystemid": "11",
+        "code": str(city_code),
+        "quantity": "5000",
+        "account_id": str(account_id),
+        "proceed-to-checkout": "134"
     }
     async with aiohttp.ClientSession(headers={"Content-Types": "form-data"}) as session:
         async with session.post(url=INFO_URL, data=data) as response:
             info = (await response.json(encoding="utf-8")).get('data').get('url')
+            if info is None:
+                return None
 
 
     async with aiohttp.ClientSession() as session:

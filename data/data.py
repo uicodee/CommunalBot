@@ -2,17 +2,17 @@ services = {
     'RU': {
         '⚡️ Электроэнергия': 131,
         '⛽️ Природный газ': 134,
-        '⚙️Настройки': 1
+        '⚙️ Изменить язык': 1
     },
     'UZ': {
         '⚡️ Elektr energiyasi': 131,
         '⛽️ Tabiiy gaz': 134,
-        '⚙️Sozlamalar': 1,
+        '⚙️ Tilni o\'zgartirish': 1,
     },
     'EN': {
         '⚡️ Electricity': 131,
         '⛽️ Natural gas': 134,
-        '⚙️Settings': 1
+        '⚙️ Change language': 1
     }
 }
 
@@ -443,12 +443,18 @@ messages = {
 
 errors = {
     'RU': {
-        'digit_error': 'Пожалуйста, вводите только числовые значения'
+        'digit_error': 'Пожалуйста, вводите только числовые значения',
+        'len_error': 'Пожалуйста, вводите только 7 значный номер счета',
+        'account_error': 'Неверный номер лицевого счета. Попробуйте еще раз'
     },
     'UZ': {
-        'digit_error': 'Iltimos faqat raqam kiriting'
+        'digit_error': 'Iltimos faqat raqam kiriting',
+        'len_error': 'Iltimos faqat 7 xonali xisob raqamini kiriting',
+        'account_error': 'Notogri xisob raqami. Yana bir bor urinib ko\'ring'
     },
     'EN': {
-        'digit_error': 'Please enter numeric values only'
+        'digit_error': 'Please enter numeric values only',
+        'len_error': 'Please enter a 7 digit account number only',
+        'account_error': 'Invalid personal account number. Try again'
     }
 }
