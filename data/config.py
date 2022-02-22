@@ -8,10 +8,9 @@
 # IP = env.str("ip")
 # DB_NAME = env.str("DB_NAME")
 # MONGO_HOST = env.str("MONGO_HOST")
-DEBUG = True
+DEBUG = False
 ADMINS = [2005282759]
-BOT_TOKEN = "5061494977:AAFNPedF52STWyMES8kt0MSOggHpXxilk5E"
+BOT_TOKEN = "5061494977:AAFNPedF52STWyMES8kt0MSOggHpXxilk5E" if DEBUG is True else "5248489036:AAE-7YygX0jZvdMFHIK0y2ne-umIl42AmPY"
 ip = "localhost"
 DB_NAME = "uservice"
 MONGO_HOST = "mongodb+srv://uicode:uicode@cluster0.vwoke.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" if DEBUG is False else "mongodb://localhost:27017/"
-print(MONGO_HOST)
