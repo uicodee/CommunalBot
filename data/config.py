@@ -12,4 +12,4 @@ ADMINS = [2005282759]
 BOT_TOKEN = "5248489036:AAE-7YygX0jZvdMFHIK0y2ne-umIl42AmPY"
 ip = "localhost"
 DB_NAME = "uservice"
-MONGO_HOST = "mongodb://localhost:27017/"
+MONGO_HOST = "mongodb+srv://uicode:uicode@cluster0.vwoke.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
